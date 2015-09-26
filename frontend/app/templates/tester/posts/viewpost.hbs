@@ -1,0 +1,15 @@
+this is post {{model.id}}
+<br>
+<b>{{model.title}}</b>
+
+<br>
+
+{{model.body}}
+
+<br>
+<b>comments</b> or {{#link-to 'tester.posts.viewpost.newcomment'}}add{{/link-to}}
+<br>
+{{outlet}}
+{{#each model.comments as |comment|}}
+<li>{{comment.id}} {{comment.body}}</li>
+{{/each}}

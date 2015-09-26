@@ -1,0 +1,14 @@
+{{#with model.post as |post|}}
+
+{{#with model.comment as |comment|}}
+
+{{outlet}}
+this is a comment for {{model.post.title}}
+
+
+{{input value=model.comment.body}}
+
+<button {{action 'save' post comment}}>save</button>
+
+{{/with}}
+{{/with}}

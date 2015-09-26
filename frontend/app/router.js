@@ -5,7 +5,7 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-Router.map(function() {
+export default Router.map(function() {
   this.route("about");
 
   this.route("login");
@@ -35,6 +35,33 @@ Router.map(function() {
       path: ":comment_id"
     });
   });
-});
 
-export default Router;
+  this.route("tester",function(){
+    this.route('posts',function(){
+      //sideby side list and clicked
+      this.route('newpost');
+      this.route('editpost',{path:'/edit/:post_id'});
+      this.route('deletepost');
+      this.route('post',function(){
+
+        //each with an outlet to show comments
+        this.route('comments')
+      });
+      this.route('viewpost', {path:'/view/:post_id'}, function() {
+        this.route('newcomment');
+      });
+    });
+
+      this.route('comments',function(){
+          //sideby side list and clicked
+          this.route('newcomment')
+          this.route('editcomment',{path:'/edit/:comment_id'})
+          this.route('deletecomment')
+          this.route('comment',function(){
+            //each with an outlet to show comments
+            this.route('comments')
+          })
+        });
+
+  });
+});

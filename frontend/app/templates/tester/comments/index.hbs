@@ -1,0 +1,10 @@
+this are the comments
+
+<br>
+{{#link-to 'tester.comments.newcomment'}}new{{/link-to}}
+{{#each model as |comment|}}
+   <h4>{{comment.body}}</h4>
+
+     {{#link-to 'tester.comments.editcomment' comment}}edit{{/link-to}}
+{{/each}}
+{{outlet}}

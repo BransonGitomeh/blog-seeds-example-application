@@ -1,0 +1,13 @@
+this are the posts
+
+<br>
+{{#link-to 'tester.posts.newpost'}}new{{/link-to}}
+{{#each model as |post|}}
+
+
+    {{#link-to 'tester.posts.viewpost' post}}<h4>{{post.title}} ({{post.CPcomments}} Comments)</h4>{{/link-to}}
+    {{post.body}}
+    {{#link-to 'tester.posts.editpost' post}}edit{{/link-to}}
+    <a {{action 'destroy' post}} href="#!/delete/{{post.id}}">destroy</a>
+{{/each}}
+{{outlet}}

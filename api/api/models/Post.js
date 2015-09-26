@@ -11,7 +11,11 @@ module.exports = {
 
     title : { type: 'string' },
 
-    body : { type: 'text' }
+    body : { type: 'text' },
+
+    comments : {
+     collection: 'comment',
+     via: 'post'
+   },
   }
 };
-

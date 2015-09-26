@@ -9,7 +9,8 @@ module.exports = {
 
   attributes: {
 
-    body : { type: 'string' }
+    body : { type: 'string' },
+
+    post : { model: 'post' }
   }
 };
-
